@@ -4,15 +4,11 @@ on:
     branches: ["main"]
   push:
     branches: ["main"]
+    tags: ["*"]
 
 jobs:
   ci:
     uses: bokulich-lab/utilities/.github/workflows/ci.yaml@main
     with:
-      distro: moshpit
-  
-  qiime-ci:
-    uses: qiime2/distributions/.github/workflows/lib-ci-dev.yaml@dev
-    with:
-      distro: moshpit
-      recipe-path: 'conda-recipe'
+      distro: tiny
+      build_docker: true

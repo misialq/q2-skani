@@ -134,8 +134,8 @@ def _process_skani_matrix(matrix_file: str) -> pd.DataFrame:
     df.columns = df.index.tolist()
 
     # Convert ANI to distance if needed (100 - ANI)
-    if not df.values[0, 0] > 1:  # If values are ANI (0-100)
-        df = 100 - df
+    # if not df.values[0, 0] > 1:  # If values are ANI (0-100)
+    #     df = 100 - df
 
     return df
 
