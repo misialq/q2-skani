@@ -216,7 +216,8 @@ def compare_seqs(
         list_file = os.path.join(temp_dir, "genome_list.txt")
         with open(list_file, "w") as f:
             f.writelines(
-                f"{str(p)}\n" for p in glob.glob(str(genomes.path / "**" / "*.fasta"), recursive=True)
+                f"{str(p)}\n"
+                for p in glob.glob(str(genomes.path / "**" / "*.fasta"), recursive=True)
             )
 
         # Run Skani in triangle mode
