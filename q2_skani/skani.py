@@ -12,7 +12,7 @@ import pandas as pd
 import subprocess
 import tempfile
 import os
-from typing import List, Dict, Any, Literal, Optional, Union
+from typing import List, Dict, Any, Optional, Union
 
 import skbio
 from q2_types.feature_data_mag import MAGSequencesDirFmt
@@ -157,7 +157,7 @@ def compare_seqs(
     no_learned_ani: bool = False,
     robust: bool = False,
     faster_small: bool = False,
-    preset: Optional[Literal["fast", "medium", "slow", "small-genomes"]] = None,
+    preset: Optional[str] = None,
 ) -> skbio.DistanceMatrix:
     """Compare sequences using Skani.
 
@@ -193,8 +193,8 @@ def compare_seqs(
         Estimate mean after trimming off 10%/90% quantiles, by default False
     faster_small : bool, optional
         Filter small genomes more aggressively, by default False
-    preset : Literal["fast", "medium", "slow", "small-genomes"] | None, optional
-        Preset mode to use, by default None
+    preset : str, optional
+        Preset mode ("fast", "medium", "slow", or "small-genomes"), by default None
 
     Returns
     -------
